@@ -4,6 +4,7 @@ import playerLeft from "./assets/playerLeft.png";
 import playerDown from "./assets/playerDown.png";
 import playerRight from "./assets/playerRight.png";
 import foregroundObject from "./assets/foregroundObjects.png";
+import island from "./assets/island.png";
 
 export const mapImage = new Image();
 mapImage.src = map;
@@ -22,3 +23,6 @@ playerRightImage.src = playerRight;
 
 export const foregroundImage = new Image();
 foregroundImage.src = foregroundObject;
+
+export const islandImage = new Image();
+islandImage.src = island;

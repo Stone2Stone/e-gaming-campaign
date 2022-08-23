@@ -1,5 +1,6 @@
 import {
   foregroundImage,
+  islandImage,
   mapImage,
   playerDownImage,
   playerLeftImage,
@@ -18,17 +19,17 @@ const collisionsMap = [];
 const boundaries = [];
 
 const offset = {
-  x: -735,
-  y: -650,
+  x: -734,
+  y: -600,
 };
 
-for (let i = 0; i < collisions.length; i += 70) {
-  collisionsMap.push(collisions.slice(i, 70 + i));
+for (let i = 0; i < collisions.length; i += 160) {
+  collisionsMap.push(collisions.slice(i, 160 + i));
 }
 
 collisionsMap.forEach((row, rowIndex) => {
   row.forEach((symbol, symbolIndex) => {
-    if (symbol === 1025) {
+    if (symbol === 20415) {
       boundaries.push(
         new Boundary({
           position: {
@@ -63,7 +64,7 @@ const background = new Sprite({
     x: offset.x,
     y: offset.y,
   },
-  image: mapImage,
+  image: islandImage,
 });
 
 const foreground = new Sprite({
@@ -83,7 +84,7 @@ function animate() {
     boundary.draw();
   });
   player.draw();
-  foreground.draw();
+  // foreground.draw();
 
   let moving = true;
   player.moving = false;
