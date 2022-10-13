@@ -1,10 +1,10 @@
-import map from "./assets/Pellet_Town.png";
-import playerUp from "./assets/playerUp.png";
-import playerLeft from "./assets/playerLeft.png";
-import playerDown from "./assets/playerDown.png";
-import playerRight from "./assets/playerRight.png";
-import foregroundObject from "./assets/foregroundObjects.png";
-import island from "./assets/island.png";
+import map from "../assets/Pellet_Town.png";
+import playerUp from "../assets/playerUp.png";
+import playerLeft from "../assets/playerLeft.png";
+import playerDown from "../assets/playerDown.png";
+import playerRight from "../assets/playerRight.png";
+import foregroundObject from "../assets/foregroundObjects.png";
+import island from "../assets/island.png";
 
 export const mapImage = new Image();
 mapImage.src = map;

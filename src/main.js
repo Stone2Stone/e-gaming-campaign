@@ -8,8 +8,8 @@ import {
   playerUpImage,
 } from "./images";
 import { canvas } from "./canvas.js";
-import collisions from "./data/collisions";
-import indoorOne from "./data/indoors";
+import collisions from "../data/collisions";
+import indoorOne from "../data/indoors";
 import Sprite from "./Sprite";
 import keys from "./keys";
 import Boundary from "./Boundary";
