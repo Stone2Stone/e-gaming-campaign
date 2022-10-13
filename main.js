@@ -9,10 +9,15 @@ import {
 } from "./images";
 import { canvas } from "./canvas.js";
 import collisions from "./data/collisions";
+import indoorOne from "./data/indoors";
 import Sprite from "./Sprite";
 import keys from "./keys";
 import Boundary from "./Boundary";
 import { collisionDetection } from "./collisions";
+
+const indoorsMap = [];
+
+const indoors = [];
 
 const collisionsMap = [];
 
@@ -25,6 +30,10 @@ const offset = {
 
 for (let i = 0; i < collisions.length; i += 160) {
   collisionsMap.push(collisions.slice(i, 160 + i));
+}
+
+for (let i = 0; i < indoorOne.length; i += 160) {
+  indoorsMap.push(indoorOne.slice(i, 160 + i));
 }
 
 collisionsMap.forEach((row, rowIndex) => {
@@ -41,6 +50,23 @@ collisionsMap.forEach((row, rowIndex) => {
     }
   });
 });
+
+indoorsMap.forEach((row, rowIndex) => {
+  row.forEach((symbol, symbolIndex) => {
+    if (symbol === 20415) {
+      indoors.push(
+        new Boundary({
+          position: {
+            x: symbolIndex * Boundary.width + offset.x,
+            y: rowIndex * Boundary.height + offset.y,
+          },
+        })
+      );
+    }
+  });
+});
+
+console.log(indoors);
 
 const player = new Sprite({
   position: {
@@ -75,7 +101,7 @@ const foreground = new Sprite({
   image: foregroundImage,
 });
 
-const moveItems = [background, foreground, ...boundaries];
+const moveItems = [background, foreground, ...boundaries, ...indoors];
 
 function animate() {
   requestAnimationFrame(animate);
@@ -83,8 +109,31 @@ function animate() {
   boundaries.forEach((boundary) => {
     boundary.draw();
   });
+  indoors.forEach((indoor) => {
+    indoor.draw();
+  });
   player.draw();
   // foreground.draw();
+
+  if (
+    keys.ArrowUp.pressed ||
+    keys.ArrowLeft.pressed ||
+    keys.ArrowDown.pressed ||
+    keys.ArrowLeft
+  ) {
+    for (let i = 0; i < indoors.length; i++) {
+      const indoor = indoors[i];
+      if (
+        collisionDetection({
+          collision1: player,
+          collision2: indoor,
+        })
+      ) {
+        console.log("remove entered");
+        break;
+      }
+    }
+  }
 
   let moving = true;
   player.moving = false;
