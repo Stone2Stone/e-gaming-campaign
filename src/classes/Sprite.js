@@ -1,4 +1,4 @@
-import { canvas, canvasContext } from "./canvas.js";
+import { canvasContext } from "../canvas.js";
 
 class Sprite {
   constructor({ position, image, frames = { max: 1 }, sprites }) {

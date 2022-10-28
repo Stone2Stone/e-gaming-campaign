@@ -1,4 +1,4 @@
-export function collisionDetection({ collision1, collision2 }) {
+function collisionDetection({ collision1, collision2 }) {
   return (
     collision1.position.x + collision1.width >= collision2.position.x &&
     collision1.position.x <= collision2.position.x + collision2.width &&
@@ -6,3 +6,5 @@ export function collisionDetection({ collision1, collision2 }) {
     collision1.position.y + collision1.height >= collision2.position.y
   );
 }
+
+export default collisionDetection;
