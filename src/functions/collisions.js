@@ -9,7 +9,7 @@ Array.prototype.parse2D = function (width) {
   return rows;
 };
 
-const getCollisionsMap = (collisionData, collisionWidth) => {
+const getCollisionsMap = (collisionData, collisionWidth, currentMap) => {
   const boundaries = [];
   const collisionsMap = collisionData.parse2D(collisionWidth);
   collisionsMap.forEach((row, rowIndex) => {
@@ -18,8 +18,8 @@ const getCollisionsMap = (collisionData, collisionWidth) => {
         boundaries.push(
           new Boundary({
             position: {
-              x: symbolIndex * Boundary.width + offset.x,
-              y: rowIndex * Boundary.height + offset.y,
+              x: symbolIndex * Boundary.width + currentMap.position.x,
+              y: rowIndex * Boundary.height + currentMap.position.y,
             },
             symbol: symbol,
           })

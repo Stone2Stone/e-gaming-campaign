@@ -1,9 +1,6 @@
 import Sprite from "./Sprite";
 import keys from "../keys";
 import collisionDetection from "../functions/collisionDetection";
-import player from "../player";
-import { animateAuditorium, animateIsland } from "../animeMaps";
-import { canvas, canvasContext } from "../canvas";
 
 class Player extends Sprite {
   constructor({
@@ -12,16 +9,18 @@ class Player extends Sprite {
     frames = { max: 1 },
     moving,
     sprites,
+    speed = 7,
     collisionBlocks = [],
     buildingBoundaries = [],
-    transition = false,
+    location = "arcade",
     moveItems,
   }) {
     super({ position, image, frames, moving, sprites });
     this.collisionBlocks = collisionBlocks;
     this.buildingBoundaries = buildingBoundaries;
     this.moveItems = moveItems;
-    this.transition = transition;
+    this.location = location;
+    this.speed = speed;
     this.velocity = {
       x: 0,
       y: 0,
@@ -34,26 +33,26 @@ class Player extends Sprite {
     if (keys.ArrowUp.pressed) {
       this.moving = true;
       this.image = this.sprites.up;
-      this.loopCollisionBlock(0, 3);
-      this.horizontalCollision(3);
+      this.loopCollisionBlock(0, this.speed);
+      this.horizontalCollision(this.speed);
       this.checkBuildingCollision();
     } else if (keys.ArrowLeft.pressed) {
       this.moving = true;
       this.image = this.sprites.left;
-      this.loopCollisionBlock(3, 0);
-      this.verticalCollision(3);
+      this.loopCollisionBlock(this.speed, 0);
+      this.verticalCollision(this.speed);
       this.checkBuildingCollision();
     } else if (keys.ArrowDown.pressed) {
       this.moving = true;
       this.image = this.sprites.down;
-      this.loopCollisionBlock(0, -3);
-      this.horizontalCollision(-3);
+      this.loopCollisionBlock(0, -this.speed);
+      this.horizontalCollision(-this.speed);
       this.checkBuildingCollision();
     } else if (keys.ArrowRight.pressed) {
       this.moving = true;
       this.image = this.sprites.right;
-      this.loopCollisionBlock(-3, 0);
-      this.verticalCollision(-3);
+      this.loopCollisionBlock(-this.speed, 0);
+      this.verticalCollision(-this.speed);
       this.checkBuildingCollision();
     }
   }
@@ -88,8 +87,23 @@ class Player extends Sprite {
           collision2: buildingBoundary,
         })
       ) {
-        player.transition = true;
-        console.log("CONNECTED");
+        switch (buildingBoundary.symbol) {
+          case 66884:
+            this.location = "auditorium";
+            break;
+          case 57492:
+            this.location = "library";
+            break;
+          case 96037:
+            this.location = "control room";
+            break;
+          case 28461:
+            this.location = "arcade";
+            break;
+          default:
+            this.location = "island";
+            break;
+        }
         break;
       }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "2d-game",
+  "name": "e-game-2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^3.0.6"
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "socket.io-client": "^4.5.3"

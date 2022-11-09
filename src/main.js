@@ -1,7 +1,11 @@
 import keys from "./keys";
-import { animateAuditorium, animateIsland } from "./animeMaps";
+import checkPlayerLocation from "./functions/checkPlayerLocation";
+import player from "./player";
+import { animateIsland } from "./animeMaps";
 
 animateIsland();
+
+// checkPlayerLocation(player.location);
 
 addEventListener("keydown", ({ key }) => {
   switch (key) {

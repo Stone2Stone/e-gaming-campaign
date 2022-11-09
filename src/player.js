@@ -22,6 +22,8 @@ const player = new Player({
     down: playerDownImage,
     right: playerRightImage,
   },
+  location: "audiorium",
+  speed: 7,
 });
 
 export default player;
