@@ -1,13 +1,61 @@
 body {
-  background-color: black;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
   height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  row-gap: 70px;
+  background: url("/assets/homepage/homepage-background.png") no-repeat;
+  background-size: cover;
+  font-family: GT Walsheim Pro;
 }
 
-::-webkit-scrollbar {
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img.warning-img {
   display: none;
+}
+
+.text {
+  display: none;
+  margin: 0 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.text strong {
+  font-size: 20px;
+}
+
+.text p {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    row-gap: 20px;
+  }
+
+  img.innovation-island-img {
+    width: 85%;
+  }
+
+  .text {
+    display: block;
+  }
+
+  img.warning-img {
+    display: block;
+    width: 20%;
+  }
+
+  a {
+    display: none;
+  }
 }

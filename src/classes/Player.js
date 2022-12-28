@@ -1,6 +1,7 @@
 import Sprite from "./Sprite";
 import keys from "../keys";
-import collisionDetection from "../functions/collisionDetection";
+import { collisionDetection } from "../functions/collisionDetection";
+import { canvasContext } from "../dom-elements";
 
 class Player extends Sprite {
   constructor({
@@ -12,12 +13,14 @@ class Player extends Sprite {
     speed = 7,
     collisionBlocks = [],
     buildingBoundaries = [],
+    oceanCollisions = [],
     location = "arcade",
     moveItems,
   }) {
     super({ position, image, frames, moving, sprites });
     this.collisionBlocks = collisionBlocks;
     this.buildingBoundaries = buildingBoundaries;
+    this.oceanCollisions = oceanCollisions;
     this.moveItems = moveItems;
     this.location = location;
     this.speed = speed;
@@ -25,6 +28,9 @@ class Player extends Sprite {
       x: 0,
       y: 0,
     };
+    this.inOcean = false;
+    this.pickedCoins = 0;
+    this.totalCoins = 0;
   }
 
   update() {
@@ -55,6 +61,30 @@ class Player extends Sprite {
       this.verticalCollision(-this.speed);
       this.checkBuildingCollision();
     }
+    const param = window.location.search
+      ? new URLSearchParams(window.location.search).get("name")
+      : "";
+    const val =
+      this.location === "island" || this.location === "library"
+        ? `🟢 ${param}`
+        : `🟢 ${this.pickedCoins}/${this.totalCoins} ${param}`;
+    canvasContext.save();
+    canvasContext.fillStyle = "black";
+    canvasContext.beginPath();
+    canvasContext.roundRect(
+      this.position.x + 23 - canvasContext.measureText(val).width / 2 - 10,
+      this.position.y - 25,
+      canvasContext.measureText(val).width + 20,
+      24,
+      5
+    );
+    canvasContext.fill();
+    canvasContext.fillStyle = "white";
+    canvasContext.textAlign = "center";
+    canvasContext.textBaseline = "middle";
+    canvasContext.font = "12px GT Walsheim Pro";
+    canvasContext.fillText(val, this.position.x + 23, this.position.y - 12);
+    canvasContext.restore();
   }
 
   loopCollisionBlock(currentX, currentY) {
@@ -87,6 +117,7 @@ class Player extends Sprite {
           collision2: buildingBoundary,
         })
       ) {
+        console.log(buildingBoundary.symbol);
         switch (buildingBoundary.symbol) {
           case 66884:
             this.location = "auditorium";
@@ -106,6 +137,50 @@ class Player extends Sprite {
         }
         break;
       }
+    }
+  }
+
+  checkSinglePopUpCollision(popUpCollision) {
+    if (
+      collisionDetection({
+        collision1: this,
+        collision2: popUpCollision,
+      })
+    ) {
+      return popUpCollision.symbol;
+    }
+  }
+
+  checkPopUpCollision(popUpCollisions) {
+    for (let i = 0; i < popUpCollisions.length; i++) {
+      const popUpCollision = popUpCollisions[i];
+      if (
+        collisionDetection({
+          collision1: this,
+          collision2: popUpCollision,
+        })
+      ) {
+        return popUpCollision.symbol;
+      }
+    }
+  }
+
+  checkOceanCollision() {
+    for (let i = 0; i < this.oceanCollisions.length; i++) {
+      const oceanCollision = this.oceanCollisions[i];
+      if (
+        collisionDetection({
+          collision1: this,
+          collision2: oceanCollision,
+        })
+      ) {
+        // this.inOcean = !this.inOcean;
+        // return this.inOcean;
+        return true;
+      }
+      // else {
+      //   return false;
+      // }
     }
   }
 

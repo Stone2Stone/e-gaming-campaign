@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  background: url("/assets/homepage/homepage-background.png") no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: GT Walsheim Pro;
+  height: 100vh;
+  position: relative;
+  place-content: center;
+}
+
+body .images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+body .welcome-icon {
+  width: 25%;
+  height: fit-content;
+}
+
+body .welcome-page-logo {
+  width: 25%;
+}
+
+main {
+  width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  gap: 0 10px;
+  height: fit-content;
+  position: relative;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  font-size: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+}
+
+.first-section > ol {
+  list-style-position: inside;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px 0;
+  font-size: 16px;
+}
+
+.death-star-img {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  width: 31%;
+  float: right;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: row;
+  gap: 0 10px;
+  padding: 30px 20px;
+}
+
+.instructions > .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 62%;
+}
+
+.instructions > .image-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 2;
+  padding: 10px 20px;
+  gap: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+form > label,
+input {
+  font-size: 20px;
+}
+
+form > label {
+  font-family: 8BIT WONDER;
+}
+
+form > input[type="text"] {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+form > button[type="submit"] {
+  margin: 0;
+  border: unset;
+  background: unset;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.section {
+  background-color: #29abe2;
+  border-radius: 5px;
+}

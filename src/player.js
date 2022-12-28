@@ -1,4 +1,4 @@
-import { canvas } from "./canvas";
+import { canvas } from "./dom-elements";
 import {
   playerDownImage,
   playerLeftImage,
@@ -12,7 +12,7 @@ const player = new Player({
     x: canvas.width / 2 - 192 / 4 / 2,
     y: canvas.height / 2 - 68 / 2,
   },
-  image: playerDownImage,
+  image: playerUpImage,
   frames: {
     max: 4,
   },
@@ -22,7 +22,7 @@ const player = new Player({
     down: playerDownImage,
     right: playerRightImage,
   },
-  location: "audiorium",
+  location: "island",
   speed: 7,
 });
 

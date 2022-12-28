@@ -1,5 +1,6 @@
 import {
   islandCollision,
+  oceanCollision,
   auditoriumCollision,
   arcadeCollision,
   libraryCollision,
@@ -12,7 +13,7 @@ import {
   exitIsland,
   exitLibrary,
 } from "./buildingCollisions";
-import getCollisionsMap from "../functions/collisions";
+import { getCollisionsMap } from "../functions/collisions";
 import {
   arcadeBg,
   auditoriumBg,
@@ -29,42 +30,44 @@ export const islandBoundaries = getCollisionsMap(
 
 export const exitIslandBoundaries = getCollisionsMap(exitIsland, 160, islandBg);
 
+export const oceanBoundaries = getCollisionsMap(oceanCollision, 160, islandBg);
+
 export const auditoriumBoundaries = getCollisionsMap(
   auditoriumCollision,
-  80,
+  72,
   auditoriumBg
 );
 
 export const exitAuditoriumBoundaries = getCollisionsMap(
   exitAuditorium,
-  80,
+  72,
   auditoriumBg
 );
 
-export const arcadeBoundaries = getCollisionsMap(arcadeCollision, 68, arcadeBg);
+export const arcadeBoundaries = getCollisionsMap(arcadeCollision, 56, arcadeBg);
 
-export const exitArcadeBoundaries = getCollisionsMap(exitArcade, 68, arcadeBg);
+export const exitArcadeBoundaries = getCollisionsMap(exitArcade, 56, arcadeBg);
 
 export const libraryBoundaries = getCollisionsMap(
   libraryCollision,
-  80,
+  74,
   libraryBg
 );
 
 export const exitLibraryBoundaries = getCollisionsMap(
   exitLibrary,
-  80,
+  74,
   libraryBg
 );
 
 export const controlRoomBoundaries = getCollisionsMap(
   controlRoomCollision,
-  60,
+  56,
   controlRoomBg
 );
 
 export const exitControlRoomBoundaries = getCollisionsMap(
   exitControlRoom,
-  60,
+  56,
   controlRoomBg
 );

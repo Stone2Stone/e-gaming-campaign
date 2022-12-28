@@ -1,4 +1,4 @@
-import { canvasContext } from "../canvas";
+import { canvasContext } from "../dom-elements";
 
 class Boundary {
   static width = 64;

@@ -1,17 +1,20 @@
-import { canvas, canvasContext } from "../canvas";
+import { canvas, canvasContext } from "../dom-elements";
 
 class Minimap {
-  constructor({ image }) {
-    this.width = canvas.width / 3;
-    this.height = canvas.height / 3;
+  constructor({ image, position, scale = 3 }) {
     this.image = image;
+    this.image.onload = () => {
+      this.width = this.image.width / scale;
+      this.height = this.image.height / scale;
+    };
+    this.position = position;
   }
 
   draw() {
     canvasContext.drawImage(
       this.image,
-      10,
-      canvas.height - this.height - 10,
+      this.position.x, //10,
+      this.position.y, //canvas.height - this.height - 50,
       this.width,
       this.height
     );
@@ -19,8 +22,6 @@ class Minimap {
 
   update() {
     this.draw();
-    canvasContext.fillStyle = "red";
-    canvasContext.fillRect(10, canvas.height - (this.height - 10), 3, 3);
   }
 }
 

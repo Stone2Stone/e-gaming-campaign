@@ -1,4 +1,4 @@
-function collisionDetection({ collision1, collision2 }) {
+export function collisionDetection({ collision1, collision2 }) {
   return (
     collision1.position.x + collision1.width >= collision2.position.x &&
     collision1.position.x <= collision2.position.x + collision2.width &&
@@ -7,4 +7,11 @@ function collisionDetection({ collision1, collision2 }) {
   );
 }
 
-export default collisionDetection;
+export function popUpCollisionDetection({ collision1, collision2 }) {
+  // console.log(collision2.position);
+  return (
+    collision2.position.y + collision2.height >= collision1.position.y &&
+    collision1.position.y + collision1.height <=
+      collision2.position.y + collision2.position.height
+  );
+}
