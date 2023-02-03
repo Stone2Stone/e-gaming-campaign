@@ -8,8 +8,20 @@ import { gameLogo, libraryMiniMap } from "../mini-maps";
 import pdf from "../pdf";
 import player from "../player";
 import checkPlayerLocation from "../functions/checkPlayerLocation";
-import { canvasContext } from "../dom-elements";
+import { canvas, canvasContext, videoOne } from "../dom-elements";
 import keys from "../keys";
+import Video from "../classes/Video";
+import { videoOneCollisions } from "../collisions/videoCollision";
+import { collisionDetection } from "../functions/collisionDetection";
+import { handlePlayButton } from "../main";
+
+const video = new Video({
+  video: videoOne,
+  position: {
+    x: 500,
+    y: -1585,
+  },
+});
 
 function animateLibrary() {
   keys.game.paused = true;
@@ -30,8 +42,9 @@ function animateLibrary() {
     exitLibraryBoundaries.forEach((exitLibraryBoundary) => {
       exitLibraryBoundary.draw("transparent");
     });
-    // pdf.update();
-
+    videoOneCollisions.forEach((videoOneCollision) => {
+      videoOneCollision.draw("transparent");
+    });
     player.buildingBoundaries = exitLibraryBoundaries;
     player.collisionBlocks = libraryBoundaries;
     player.moveItems = [
@@ -40,13 +53,31 @@ function animateLibrary() {
       ...libraryBoundaries,
       ...exitLibraryBoundaries,
       ...libraryPopUpCollisions,
-      pdf,
+      ...videoOneCollisions,
+      video,
     ];
     player.update();
     libraryOverlay.draw();
     libraryMiniMap.update();
     gameLogo.draw();
+    video.update();
     let symbol = player.checkPopUpCollision(libraryPopUpCollisions);
+    for (let i = 0; i < videoOneCollisions.length; i++) {
+      const collision = videoOneCollisions[i];
+
+      if (
+        collisionDetection({
+          collision1: player,
+          collision2: collision,
+        })
+      ) {
+        handlePlayButton(false);
+        return;
+      }
+    }
+
+    handlePlayButton(true);
+
     switch (symbol) {
       case 1:
         break;

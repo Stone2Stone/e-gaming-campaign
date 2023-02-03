@@ -71,7 +71,7 @@ export const auditoriumOverlay = new Sprite({
 
 export const libraryBg = new Sprite({
   position: {
-    x: -250,
+    x: -193,
     y: -1900,
   },
   image: libraryImage,
@@ -79,7 +79,7 @@ export const libraryBg = new Sprite({
 
 export const libraryOverlay = new Sprite({
   position: {
-    x: -250,
+    x: -193,
     y: -1900,
   },
   image: libraryOverlayImage,

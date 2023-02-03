@@ -50,13 +50,13 @@ export const exitArcadeBoundaries = getCollisionsMap(exitArcade, 56, arcadeBg);
 
 export const libraryBoundaries = getCollisionsMap(
   libraryCollision,
-  74,
+  49,
   libraryBg
 );
 
 export const exitLibraryBoundaries = getCollisionsMap(
   exitLibrary,
-  74,
+  49,
   libraryBg
 );
 

@@ -46,7 +46,7 @@ function animateControlRoom() {
         coinCount.controlRoom.count = coinCount.controlRoom.count + 1;
         player.pickedCoins = coinCount.controlRoom.count;
         if (player.pickedCoins === coinCount.controlRoom.max) {
-          coinCount.controlRoom.complete = true;
+          coinCount.controlRoom.isComplete = true;
           keys.congratsForm.active = true;
         }
       }

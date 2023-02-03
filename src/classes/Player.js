@@ -165,22 +165,20 @@ class Player extends Sprite {
     }
   }
 
-  checkOceanCollision() {
-    for (let i = 0; i < this.oceanCollisions.length; i++) {
-      const oceanCollision = this.oceanCollisions[i];
+  videoCollision(videoCollisions) {
+    for (let i = 0; i < videoCollisions.length; i++) {
+      const collision = videoCollisions[i];
+
       if (
         collisionDetection({
           collision1: this,
-          collision2: oceanCollision,
+          collision2: collision,
         })
       ) {
-        // this.inOcean = !this.inOcean;
-        // return this.inOcean;
         return true;
+      } else {
+        return false;
       }
-      // else {
-      //   return false;
-      // }
     }
   }
 

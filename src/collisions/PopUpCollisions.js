@@ -37,7 +37,7 @@ export const controlRoomPopUpCollisions = getPopUpCollisionMap(
 
 export const libraryPopUpCollisions = getPopUpCollisionMap(
   libraryPopUp,
-  74,
+  49,
   libraryBg,
   2
 );

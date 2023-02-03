@@ -2,17 +2,17 @@ const coinCount = {
   auditorium: {
     count: 0,
     max: 6,
-    complete: false,
+    isComplete: false,
   },
   controlRoom: {
     count: 0,
     max: 6,
-    complete: false,
+    isComplete: false,
   },
   arcade: {
     count: 0,
     max: 5,
-    complete: false,
+    isComplete: false,
   },
 };
 

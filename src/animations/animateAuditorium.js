@@ -18,10 +18,8 @@ import { auditoriumPopUpCollisions } from "../collisions/PopUpCollisions";
 import { auditoriumMiniMap, gameLogo } from "../mini-maps";
 import player from "../player";
 import checkPlayerLocation from "../functions/checkPlayerLocation";
-import { canvas, canvasContext } from "../dom-elements";
 import { auditoriumSpawnCollision } from "../collisions/spawnCollision";
 import keys from "../keys";
-import Coin from "../classes/Coin";
 import Boundary from "../classes/Boundary";
 import coinCount from "../coinCount";
 import { activateCongratsForm } from "../functions/activateForm";
@@ -47,7 +45,7 @@ function animateAuditorium() {
         coinCount.auditorium.count = coinCount.auditorium.count + 1;
         player.pickedCoins = coinCount.auditorium.count;
         if (player.pickedCoins === coinCount.auditorium.max) {
-          coinCount.auditorium.complete = true;
+          coinCount.auditorium.isComplete = true;
           keys.congratsForm.active = true;
         }
       }

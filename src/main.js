@@ -2,12 +2,13 @@ import keys from "./keys";
 import checkPlayerLocation from "./functions/checkPlayerLocation";
 import player from "./player";
 import {
-  freeMapFormSectionEl,
-  freeMapFormEl,
-  congratsFormEl,
-  congratsFormSectionEl,
+  freeFormPopUpImages,
+  freeMapScriptEl,
+  freeMapFormButtonEl,
+  congratsFormButtonEl,
+  congratsFormPopUpEl,
+  videoOne,
 } from "./dom-elements";
-import { activateCongratsForm } from "./functions/activateForm";
 
 checkPlayerLocation(player.location);
 
@@ -34,6 +35,8 @@ addEventListener("keydown", (e) => {
       e.preventDefault();
       keys.game.paused = true;
       checkPlayerLocation(player.location);
+      !congratsFormPopUpEl.classList.contains("hide") &&
+        congratsFormPopUpEl.classList.add("hide");
       break;
   }
 });
@@ -59,57 +62,61 @@ addEventListener("keyup", (e) => {
   }
 });
 
-freeMapFormEl.addEventListener("submit", (e) => {
+playVideo();
+
+freeMapFormButtonEl.addEventListener("click", (e) => {
   e.preventDefault();
-  const data = new FormData(e.target);
-  fetch(e.target.action, {
-    method: freeMapFormEl.method,
-    body: data,
-    headers: {
-      Accept: "application/json",
-    },
-  }).then((response) => {
-    if (response.ok) {
-      freeMapFormEl.reset();
-      freeMapFormSectionEl.innerHTML = `<p style="color: #ffffff;">Thank you for filling in the form</p>`;
-    } else {
-      response.json().then((data) => {
-        if (Object.hasOwn(data, "errors")) {
-          console.log(
-            data["errors"].map((error) => error["message"]).join(", ")
-          );
-        } else {
-          console.log("Oops! There was a problem submitting your form");
-        }
-      });
-    }
-  });
+  !freeFormPopUpImages.classList.contains("hide") &&
+    freeFormPopUpImages.classList.add("hide");
+
+  freeMapScriptEl.classList.contains("hide") &&
+    freeMapScriptEl.classList.remove("hide");
 });
-congratsFormEl.addEventListener("submit", (e) => {
+
+congratsFormButtonEl.addEventListener("click", (e) => {
   e.preventDefault();
-  const data = new FormData(e.target);
-  fetch(e.target.action, {
-    method: congratsFormEl.method,
-    body: data,
-    headers: {
-      Accept: "application/json",
-    },
-  }).then((response) => {
-    if (response.ok) {
-      congratsFormEl.reset();
-      congratsFormSectionEl.innerHTML = `<p style="color: #ffffff;">Thank you for filling in the form</p>`;
-      keys.congratsForm.active = false;
-      activateCongratsForm();
-    } else {
-      response.json().then((data) => {
-        if (Object.hasOwn(data, "errors")) {
-          console.log(
-            data["errors"].map((error) => error["message"]).join(", ")
-          );
-        } else {
-          console.log("Oops! There was a problem submitting your form");
-        }
-      });
-    }
-  });
+  keys.congratsForm.active = false;
+  switch (player.location) {
+    case "auditorium":
+      open(
+        "https://r1.dotdigital-pages.com/p/7FTD-29G/red-hat-enterprise-linux",
+        "mozillaWindow",
+        "popup"
+      );
+      break;
+    case "control room":
+      open(
+        "https://r1.dotdigital-pages.com/p/7FTD-29I/red-hat-ansible-automation-platform",
+        "mozillaWindow",
+        "popup"
+      );
+      break;
+    case "arcade":
+      open(
+        "https://r1.dotdigital-pages.com/p/7FTD-29J/red-hat-openshift",
+        "mozillaWindow",
+        "popup"
+      );
+      break;
+  }
 });
+
+async function playVideo() {
+  try {
+    await videoOne.play();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export function handlePlayButton(isPaused) {
+  keys.videoOne.paused = isPaused;
+  switch (keys.videoOne.paused) {
+    case true:
+      videoOne.pause();
+      break;
+    case false:
+      videoOne.play();
+      break;
+  }
+}

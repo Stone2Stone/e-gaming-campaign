@@ -50,20 +50,19 @@ form {
   gap: 0 10px;
 }
 
-.free-map-form-popup {
-  background: url(/assets/free-map.png) no-repeat center;
-}
-
-.congrats-form-popup {
-  background: url(/assets//congrats-board.png) no-repeat center;
+.form-btn {
+  position: absolute;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  top: 71%;
+  cursor: pointer;
 }
 
 .form-popup {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hide {

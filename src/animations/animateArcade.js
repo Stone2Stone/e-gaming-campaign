@@ -17,7 +17,6 @@ import { arcadePopUpCollisions } from "../collisions/PopUpCollisions";
 import { arcadeMiniMap, gameLogo } from "../mini-maps";
 import player from "../player";
 import checkPlayerLocation from "../functions/checkPlayerLocation";
-import { canvasContext } from "../dom-elements";
 import Boundary from "../classes/Boundary";
 import keys from "../keys";
 import coinCount from "../coinCount";
@@ -41,8 +40,8 @@ function animateArcade() {
         coinCount.arcade.count = coinCount.arcade.count + 1;
         player.pickedCoins = coinCount.arcade.count;
         if (player.pickedCoins === coinCount.arcade.max) {
-          coinCount.arcade.complete = true;
-          keys.congratsForm.active = true;
+          coinCount.arcade.isComplete = true;
+          keys.congratsForm.active = !keys.congratsForm.active;
         }
       }
     });

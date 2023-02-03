@@ -23,6 +23,9 @@ const keys = {
   congratsForm: {
     active: false,
   },
+  videoOne: {
+    paused: true,
+  },
 };
 
 export default keys;

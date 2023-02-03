@@ -10,75 +10,69 @@
   <body>
     <div class="canvas-wrapper" width="1280" height="720">
       <canvas id="app"> </canvas>
+      <video
+        src="assets/video/video_1.mp4"
+        preload="auto"
+        autoplay="autoplay"
+        paused
+        hidden
+        id="video1"
+      ></video>
+      <!-- <video
+        src="https://player.vimeo.com/video/762665301?h=4aeb155171&dnt=1&app_id=122963"
+        preload="auto"
+        autoplay="autoplay"
+        hidden
+        id="video2"
+      ></video>
+      <video
+        src="https://player.vimeo.com/video/762665301?h=4aeb155171&dnt=1&app_id=122963"
+        preload="auto"
+        autoplay="autoplay"
+        hidden
+        id="video3"
+      ></video> -->
       <div
         class="form-popup free-map-form-popup hide"
         width="1280"
         height="720"
       >
-        <form
-          action="https://formspree.io/f/xeqwjzlo"
-          method="POST"
-          id="free-map-form"
-        >
-          <div class="form-section">
-            <div class="input-section">
-              <label for="name">Name:</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="input-section">
-              <label for="email">Email:</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="input-section">
-              <label for="number">Number:</label>
-              <input type="text" name="number" id="number" />
-            </div>
-            <div class="input-section">
-              <label for="job-title">Job Title:</label>
-              <input type="text" name="job_title" id="job-title" />
-            </div>
-            <div class="input-section">
-              <label for="company">Company:</label>
-              <input type="text" name="company" id="company" />
-            </div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+        <div class="popup-img">
+          <img src="/assets/free-map-board.png" />
+          <img
+            src="/assets//form-btn.png"
+            alt="form-btn"
+            id="freeMapFormBtn"
+            class="form-btn"
+          />
+        </div>
+        <div class="free-map-script hide">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29F%2Finnovation-island-form%22"></script>
+        </div>
       </div>
       <div
         class="form-popup congrats-form-popup hide"
         width="1280"
         height="720"
       >
-        <form
-          action="https://formspree.io/f/xeqwjzlo"
-          method="POST"
-          id="congrats-form"
-        >
-          <div class="form-section">
-            <div class="input-section">
-              <label for="name">Name:</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="input-section">
-              <label for="email">Email:</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="input-section">
-              <label for="number">Number:</label>
-              <input type="text" name="number" id="number" />
-            </div>
-            <div class="input-section">
-              <label for="job-title">Job Title:</label>
-              <input type="text" name="job_title" id="job-title" />
-            </div>
-            <div class="input-section">
-              <label for="company">Company:</label>
-              <input type="text" name="company" id="company" />
-            </div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+        <div class="congrats-images">
+          <img src="/assets/congrats-board.png" alt="Congrat Board" />
+          <img
+            src="/assets/form-btn.png"
+            alt="Form Button"
+            id="congratFormBtn"
+            class="form-btn"
+          />
+        </div>
+        <div class="hide enterprise-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29G%2Fred-hat-enterprise-linux%22"></script>
+        </div>
+        <div class="hide ansible-automation-platform-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29I%2Fred-hat-ansible-automation-platform%22"></script>
+        </div>
+        <div class="hide open-shift-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29J%2Fred-hat-openshift%22"></script>
+        </div>
       </div>
     </div>
     <script defer type="module" src="/src/main.js"></script>

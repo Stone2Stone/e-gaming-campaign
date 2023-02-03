@@ -45,6 +45,7 @@ import sailorBack from "../assets/sailor-back.png";
 import gameLogo from "../assets/how-to/welcome-page-logo.png";
 import spaceBar from "../assets/space-bar.png";
 import freeMap from "../assets/free-map.png";
+import firstVideoFrame from "../assets/library/first-video-frame.jpg";
 
 //SPRITES
 
@@ -194,3 +195,6 @@ spaceBarImage.src = spaceBar;
 
 export const freeMapImage = new Image();
 freeMapImage.src = freeMap;
+
+export const firstVideoFrameImage = new Image();
+firstVideoFrameImage.src = firstVideoFrame;
