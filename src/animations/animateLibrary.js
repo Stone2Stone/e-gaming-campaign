@@ -15,11 +15,27 @@ import { videoOneCollisions } from "../collisions/videoCollision";
 import { collisionDetection } from "../functions/collisionDetection";
 import { handlePlayButton } from "../main";
 
-const video = new Video({
+const firstVideo = new Video({
   video: videoOne,
   position: {
-    x: 500,
-    y: -1585,
+    x: 520,
+    y: -1565,
+  },
+});
+
+const secondVideo = new Video({
+  video: videoOne,
+  position: {
+    x: 1160,
+    y: -1565,
+  },
+});
+
+const thirdVideo = new Video({
+  video: videoOne,
+  position: {
+    x: 1800,
+    y: -1565,
   },
 });
 
@@ -54,30 +70,32 @@ function animateLibrary() {
       ...exitLibraryBoundaries,
       ...libraryPopUpCollisions,
       ...videoOneCollisions,
-      video,
+      firstVideo,
+      secondVideo,
+      thirdVideo,
     ];
     player.update();
     libraryOverlay.draw();
     libraryMiniMap.update();
     gameLogo.draw();
-    video.update();
+    firstVideo.update();
+    secondVideo.update();
+    thirdVideo.update();
     let symbol = player.checkPopUpCollision(libraryPopUpCollisions);
-    for (let i = 0; i < videoOneCollisions.length; i++) {
-      const collision = videoOneCollisions[i];
+    // for (let i = 0; i < videoOneCollisions.length; i++) {
+    //   const collision = videoOneCollisions[i];
 
-      if (
-        collisionDetection({
-          collision1: player,
-          collision2: collision,
-        })
-      ) {
-        handlePlayButton(false);
-        return;
-      }
-    }
-
-    handlePlayButton(true);
-
+    //   if (
+    //     collisionDetection({
+    //       collision1: player,
+    //       collision2: collision,
+    //     })
+    //   ) {
+    //     handlePlayButton(false);
+    //     return;
+    //   }
+    // }
+    videoEvent();
     switch (symbol) {
       case 1:
         break;
@@ -90,6 +108,24 @@ function animateLibrary() {
     checkPlayerLocation(player.location);
     return;
   }
+}
+
+function videoEvent() {
+  for (let i = 0; i < videoOneCollisions.length; i++) {
+    const collision = videoOneCollisions[i];
+
+    if (
+      collisionDetection({
+        collision1: player,
+        collision2: collision,
+      })
+    ) {
+      handlePlayButton(false);
+      return;
+    }
+  }
+
+  handlePlayButton(true);
 }
 
 export default animateLibrary;

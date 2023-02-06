@@ -14,8 +14,8 @@ class Video {
       this.video,
       this.position.x,
       this.position.y,
-      this.video.videoWidth / 4,
-      this.video.videoHeight / 4
+      this.video.videoWidth / 3,
+      this.video.videoHeight / 3
     );
   }
 
@@ -24,8 +24,8 @@ class Video {
       firstVideoFrameImage,
       this.position.x,
       this.position.y,
-      this.video.videoWidth / 4,
-      this.video.videoHeight / 4
+      this.video.videoWidth / 3,
+      this.video.videoHeight / 3
     );
     if (keys.videoOne.paused) return;
     this.draw();
