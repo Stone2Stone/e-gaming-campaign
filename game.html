@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/e-gaming-campaign/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/e-gaming-campaign/assets/game.680de250.js"></script>
+    <link rel="stylesheet" href="/e-gaming-campaign/assets/game.54d4d732.css">
+  </head>
+  <body>
+    <div class="canvas-wrapper" width="1280" height="720">
+      <canvas id="app"> </canvas>
+      <video
+        src="/e-gaming-campaign/assets/video_1.651af197.mp4"
+        preload="metadata"
+        paused
+        hidden
+        loop
+        id="video1"
+      ></video>
+      <video
+        src="/e-gaming-campaign/assets/video_2.721263b6.mp4"
+        preload="metadata"
+        paused
+        hidden
+        loop
+        id="video2"
+      ></video>
+      <video
+        src="/e-gaming-campaign/assets/video_3.831523f7.mp4"
+        preload="metadata"
+        paused
+        hidden
+        loop
+        id="video3"
+      ></video>
+      <div
+        class="form-popup free-map-form-popup hide"
+        width="1280"
+        height="720"
+      >
+        <div class="popup-img">
+          <img src="/e-gaming-campaign/assets/free-map.3b1d22e7.png" />
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAABVCAYAAADpGzlGAAAACXBIWXMAAC4jAAAuIwF4pT92AAAFBUlEQVR4nO3cT1IiPRzG8TA1B1CPoBewCveywCPoEXTrTpfvu8OVa1zNGo+gVYx7XXgAPQIewbceivhmYmhoJvAj3d9PVdcwTdN/InlIJ4GOc+63A4DN+/XTOXdMwQMw8PsHpQ7ACgEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTAzM9cB769vXWHh4f8JYGGu7y8dK+vr1kuMlsAKXx6vV6u3QHYUjs7O9lOjFswAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZrLNhG6T9/d3d3Fx4R4fH93u7q4bDAbu/Py87cWyFi8vL9NyDl1dXTXtMlvtM8cyHo8/SzEYDGpf83A4/Lq6brf77fnRaPTH1cfP65ih1Dngf5PJ5LPf7yf/FnFZYrOOj4+zZIZz7h9uwWrSJ7KW2P39fTkXUQDfwkSzEUDI4uTkxHU6na/l4OBg5d3qFpdAbwcCqKZutztdYqenp+VcxJZLtTDVz6Y7Wy30ATUHATQzHA6/3uCpJexkHo1Grt/vTx+rE1qvJYDy+fj4+LYvyreZGAVbwf7+vnt4eCjuvIFtQwtoBTc3N3/0d2ixdHd3N+20jc9J6/TcPMv222h9uJ1e5/l1cYex+nHC1+j/i4TnXXUOKv/YqmXgguPG+9e/4XH9fuK/vy839VsdHR0l9+XF+9zb20teT1vQAiqY+kpUwVJ9Jm5WKf2/uk1M9V1RBmkK2TqjcAqR6+vrb+u1TsH0/Pyc3KduN8Nt2oYWUKFU4fSGnlfxQnW2Lcm6ykBhUid8fIhUHVsto6p9aps2toQIoALpDX92dpbsrJ3Hv4YyWFwGdfa57PbLBF8bpx4QQDOp/oNwWdSPsEk6l7hPRR3jGp3zI3h6rHUhvSb3dfjj+VHB8HzC0cT4XKr2pVulmDr9w2H4TZSBjhNeQ9VInG7tJpPJdLt5AxTa5u3t7WsbjaDG59Y2BFCBUp+UekOHFUSPUxVhm4L0b6y7DDTvSEsoDox4e/+8wjgVVgo0H4jaJv7+YN2WVxMQQAWKm/N6s6daGFoXV4SmfMquswwUJHUnO8YtwFRnd6qV2HYEUANUjezEzzX1UzZnGcRBsciyQVLVgmorhuFn1O9Q6k9qVHVwxs+tUglKCK2cZUDLZHNoARUo/kRXf0jqtiL1pc6qyqXt4/1o6HgbA2hdZeBoqWwUAVSgVAdnPMlNlS6cseyFrbxURdRooA8ctRyq5reEUiM66+xvylUGsMUtWIFUgeJhaD1OVbaQAmdRAKkC6+sBdaX2pcl3vjNXLZa6fStVcpUBbNECKpBaG5rjUudWwb8mlPMb5qlOYD9DWEvuWdi5ygC2CKBCqcJrjssy322at61aA/Fcl5haC8t0yirMNv1dsxxlAFsEUMFUmfQFxnkjeFqn57TNvIqnW6Tw9408BYrWp2Ylz6PjhBPyNiFHGcBOZ/bj0H9tPB67Xq/HnxJoONXzp6enHBf5Ly0gAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZrL9HhAA1MTvAQGwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABsOGc+w8/Ygvbu+Kn7wAAAABJRU5ErkJggg=="
+            alt="form-btn"
+            id="freeMapFormBtn"
+            class="form-btn"
+          />
+        </div>
+        <div class="free-map-script hide">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29F%2Finnovation-island-form%22"></script>
+        </div>
+      </div>
+      <div
+        class="form-popup congrats-form-popup hide"
+        width="1280"
+        height="720"
+      >
+        <div class="congrats-images">
+          <img src="/e-gaming-campaign/assets/congrats-board.adc4ea94.png" alt="Congrat Board" />
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAABVCAYAAADpGzlGAAAACXBIWXMAAC4jAAAuIwF4pT92AAAFBUlEQVR4nO3cT1IiPRzG8TA1B1CPoBewCveywCPoEXTrTpfvu8OVa1zNGo+gVYx7XXgAPQIewbceivhmYmhoJvAj3d9PVdcwTdN/InlIJ4GOc+63A4DN+/XTOXdMwQMw8PsHpQ7ACgEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTADAEEwAwBBMAMAQTAzM9cB769vXWHh4f8JYGGu7y8dK+vr1kuMlsAKXx6vV6u3QHYUjs7O9lOjFswAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZrLNhG6T9/d3d3Fx4R4fH93u7q4bDAbu/Py87cWyFi8vL9NyDl1dXTXtMlvtM8cyHo8/SzEYDGpf83A4/Lq6brf77fnRaPTH1cfP65ih1Dngf5PJ5LPf7yf/FnFZYrOOj4+zZIZz7h9uwWrSJ7KW2P39fTkXUQDfwkSzEUDI4uTkxHU6na/l4OBg5d3qFpdAbwcCqKZutztdYqenp+VcxJZLtTDVz6Y7Wy30ATUHATQzHA6/3uCpJexkHo1Grt/vTx+rE1qvJYDy+fj4+LYvyreZGAVbwf7+vnt4eCjuvIFtQwtoBTc3N3/0d2ixdHd3N+20jc9J6/TcPMv222h9uJ1e5/l1cYex+nHC1+j/i4TnXXUOKv/YqmXgguPG+9e/4XH9fuK/vy839VsdHR0l9+XF+9zb20teT1vQAiqY+kpUwVJ9Jm5WKf2/uk1M9V1RBmkK2TqjcAqR6+vrb+u1TsH0/Pyc3KduN8Nt2oYWUKFU4fSGnlfxQnW2Lcm6ykBhUid8fIhUHVsto6p9aps2toQIoALpDX92dpbsrJ3Hv4YyWFwGdfa57PbLBF8bpx4QQDOp/oNwWdSPsEk6l7hPRR3jGp3zI3h6rHUhvSb3dfjj+VHB8HzC0cT4XKr2pVulmDr9w2H4TZSBjhNeQ9VInG7tJpPJdLt5AxTa5u3t7WsbjaDG59Y2BFCBUp+UekOHFUSPUxVhm4L0b6y7DDTvSEsoDox4e/+8wjgVVgo0H4jaJv7+YN2WVxMQQAWKm/N6s6daGFoXV4SmfMquswwUJHUnO8YtwFRnd6qV2HYEUANUjezEzzX1UzZnGcRBsciyQVLVgmorhuFn1O9Q6k9qVHVwxs+tUglKCK2cZUDLZHNoARUo/kRXf0jqtiL1pc6qyqXt4/1o6HgbA2hdZeBoqWwUAVSgVAdnPMlNlS6cseyFrbxURdRooA8ctRyq5reEUiM66+xvylUGsMUtWIFUgeJhaD1OVbaQAmdRAKkC6+sBdaX2pcl3vjNXLZa6fStVcpUBbNECKpBaG5rjUudWwb8mlPMb5qlOYD9DWEvuWdi5ygC2CKBCqcJrjssy322at61aA/Fcl5haC8t0yirMNv1dsxxlAFsEUMFUmfQFxnkjeFqn57TNvIqnW6Tw9408BYrWp2Ylz6PjhBPyNiFHGcBOZ/bj0H9tPB67Xq/HnxJoONXzp6enHBf5Ly0gAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZgggAGYIIABmCCAAZrL9HhAA1MTvAQGwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABMEMAATBDAAEwQwABsOGc+w8/Ygvbu+Kn7wAAAABJRU5ErkJggg=="
+            alt="Form Button"
+            id="congratFormBtn"
+            class="form-btn"
+          />
+        </div>
+        <div class="hide enterprise-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29G%2Fred-hat-enterprise-linux%22"></script>
+        </div>
+        <div class="hide ansible-automation-platform-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29I%2Fred-hat-ansible-automation-platform%22"></script>
+        </div>
+        <div class="hide open-shift-script">
+          <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29J%2Fred-hat-openshift%22"></script>
+        </div>
+      </div>
+      <div class="form-popup link-popup">
+        <div class="cool-stuff-banner hide">
+          <img src="/e-gaming-campaign/assets/cool-stuff-banner.3ef215e9.png" alt="Cool stuff banner" />
+          <a
+            href="https://coolstuff.redhat.com/login"
+            class="cool-stuff-go-to-btn"
+            target="_blank"
+          >
+            <img src="data:image/png;base64,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" alt="Go To Button" />
+          </a>
+        </div>
+        <div class="partner-portal-banner hide">
+          <img
+            src="/e-gaming-campaign/assets/partner-portal-sign.9d6ce0ff.png"
+            alt="Partner Portal Banner"
+          />
+          <a
+            href="https://www.scc.com/partners/redhat/"
+            target="_blank"
+            class="partner-portal-go-to-btn"
+          >
+            <img src="data:image/png;base64,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" alt="Go To Button" />
+          </a>
+        </div>
+        <div class="pdf-popup hide">
+          <img src="/e-gaming-campaign/assets/pdf-popup.7911179a.png" alt="PDF PopUp" class="pdf-popup" />
+          <a href="" class="pdf-popup-link" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAABWCAYAAABvj0voAAAACXBIWXMAAC4jAAAuIwF4pT92AAAGcUlEQVR4nO3dwVHjSBTG8WZrEjARUBAC3PHBE4K5wglCgNvO3EwI5sTZhGCqDHcIAWpJwITA1uelazXNk9SyhZ7B/1+VaxiPkeWW+lP3k+TZCiH8CgDQvbsfIYS/aXgAHv6i1QF4IYAAuCGAALghgAC4IYAAuCGAALghgAC4IYAAuCGAALghgAC4IYAAuCGAALghgAC4IYAAuCGAALghgAC4+dHWGx8fH4ednR22JPDNXV9fh5eXl1Y+ZGsBdHJyEvr9fluLA7Cm7u7uWgsgpmAA3BBAANwQQADcEEAA3BBAANwQQADcEEAA3BBAANwQQADcEEAA3LR2KwZCuLy8/NAKp6enodfr0TpAibc2HrPZ7G0Tjcfjt/39/co27PV6b6PRaCPbp47aJXf/Gw6Hi/Yuk7usuD2m02nWOjbtH7u7u27t2YXDw8NWMiOE8Isp2JIeHx/DwcFBODs7W/xc5fX1NVxcXITt7e1we3v79T7smri5uVm0t9q9rs2rxO3x8+fPxbLYJn4IoCVoh12mE2jH105/dXW1Jp/ka1K7qx1XCaEoLsuaPuPzUQNqKO6wlt3d3UXNJ1JQWUdXHcVVFxoOh2v7Odedwvzo6Cg8PT21sqYaEcn5+fn3bbQ1RQ2oAc3vrc8/mUzMhajOYP2O6hDz+XxNP2V3rLqNVec5Pz8327342pxlqc2rakXWdty0Gk8dakBONHV6fn7+8OYPDw+lo5nBYBCm0+lidFSkIzjD/nyj0WjxSDWt32jkqVGORk77+/sf/j2OhNANAqgBq3ajTmHtyEUKH6vzaHkKokiBtLW19cdDFHrqGMXnNf3IrSWpk1rLrltG2fpoGqppZPH5vb29Tw/U4vQ2WrYOpG0ymUw+XCKhtqZG1y2mYBkeHh5WnkZZp+uLQ35raqApXFW7DwaDynXQqeu6baf10udLWeuj9a1alt6vidwpWGS9Z1X7VS2r7HfSz8AU7E9MwRxYR1pNr5pcZKjXp6wpXZFGKVU0ulFRvDiSivS8Tl3XiYX1unUJ7wX0Knq/zxpBWJ8xndo2ZY2qOC3fHQIok7Xz1029cl5f1+mt900pQNLpj/6edqTxeKzhwuKR1qX0PnXhkrs+n9WBrWBrug1SOoBY9bmcMMbqCKAOWaOlnA6to/R8Pl8Eh/60jtpWPalI4VP8PY3G9FxR2WUDRfoMCq8YZNZp6zauz0mpBmYViK1R5WdTOKW1sbQehjwEUIessKmbwik0FBTxdfozDZPwvuwYHpoGpe9ldVQ9lx796wJIgVNclorrViF3FWmBWw+rwJ1ed4WvhwDKZAVF0yO99fq6GkZZB7Oejx3fCgAdla2jdfrauhFZWZB1TdtDZ7FWZU23rGkZPgcBlMmqNWi0kDOFKr4+Vbejl9U4vO6wt9an63XROmgauGr9J5TUlTwCdVMRQJm0s6c7vMIn94yPpkXpCEgdt25nLxtlNQm+Jtb5q0N0saemn7rws43w0cjHmtrVbRMdNGINzHq0dXvIJiCAGrCmPSqM1k3F4oWEqZzvCioLOOv5OJqyRlXqtFWdJj6sCya7VjxbV3xoytVWzUfbRJc4pEFOXalbBFAD2jGtzq0748uut4nX6Vh1hpwbHxU0KsrGjhJPl6cBVBxNWdcnWdO/OAIoPr77NTDxFhjVxKwDxzoE8CbhbviGdBRW4KR0NM29Gz68H+VzpzsKm7qpXnE0FcOtOOrSz3o+rl8cAaSd8LtNHxTWOdc3hfczfHxDQbcIoIZiAdT6So6yqVZK4ZO7oys06uo9Wqd0NKW/p3Wnus6oo/+mnv3RZ+erOLrHFGwJmuIsUwiNF/E1qTHUnWqOd9tboyk9nxt0m9oB4wGF8PFBAC1JO65CSKOZuiBSOKiD6yrmpqd49XpNi9IOEs8IlYVPKFwro9dYtQ2td1yvTeqAcXuoXbQNOe3uZ+v9rtSVzWaz0O/3N7AJ/7fq/4qh30+ncP/djA2sD/Xz+/v7NtbnNzWgFjGMB5phCgbADQEEwA0BBMANAQTADQEEwA0BtEZ0Fi29ARP4zgggAG4IIABuCCAAbgggAG4IIABuCCAAbgggAG5a+zoOAGjoNyMgAG4IIABuCCAAbgggAG4IIABuCCAAbgggAG4IIABuCCAAbgggAG4IIABuCCAAbgggAG4IIABuCCAAbgggAG4IIABu9I2IfZofQOdC+OdfxSoSlHTXlU8AAAAASUVORK5CYII=" alt="Open PDF" class="open-pdf" />
+          </a>
+        </div>
+        <div class="open-link-popup hide">
+          <img src="/e-gaming-campaign/assets/link-popup.876721f3.png" alt="Link Pop Up" />
+          <a href="#" class="link-popup-link" target="_blank">
+            <img src="data:image/png;base64,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" alt="Open Link Image" />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
