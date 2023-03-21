@@ -23,6 +23,11 @@ import keys from "../keys";
 import Boundary from "../classes/Boundary";
 import coinCount from "../coinCount";
 import { activateCongratsForm } from "../functions/activateForm";
+import {
+  canvasContext,
+  congratsFormPopUpImage,
+  enterPriseScript,
+} from "../dom-elements";
 
 function animateAuditorium() {
   if (!keys.game.paused) return;
@@ -61,7 +66,7 @@ function animateAuditorium() {
       ...exitAuditoriumBoundaries,
       ...auditoriumPopUpCollisions,
     ];
-    player.position = auditoriumSpawnCollision.position;
+    // player.position = auditoriumSpawnCollision.position;
     player.totalCoins = 6;
     player.update();
     auditoriumOverlay.draw();
@@ -102,7 +107,19 @@ function animateAuditorium() {
         break;
       case 7:
         AuditoriumMsg.draw();
+        if (!keys.congratsForm.active) break;
+        keys.congratsForm.active = false;
+        activateCongratsForm();
+        congratsFormPopUpImage.classList.contains("hide") &&
+          congratsFormPopUpImage.classList.remove("hide");
+
+        !enterPriseScript.classList.contains("hide") &&
+          enterPriseScript.classList.add("hide");
         break;
+    }
+    if (!enterPriseScript.classList.contains("hide")) {
+      canvasContext.fillStyle = "white";
+      canvasContext.fillRect(880, 0, 400, 720);
     }
   } else {
     checkPlayerLocation(player.location);

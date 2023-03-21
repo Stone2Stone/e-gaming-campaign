@@ -9,10 +9,11 @@ import auditoriumMini from "../assets/auditorium-mini.jpg";
 import arcade from "../assets/Arcade.png";
 import arcadeMini from "../assets/Arcade-mini.jpg";
 import library from "../assets/Library.png";
-import libraryMini from "../assets/Library-mini.jpg";
+import libraryMini from "../assets/Library-mini.png";
 import controlRoom from "../assets/ControlRoom.png";
 import controlRoomMini from "../assets/ControlRoom-mini.jpg";
 import islandOverlay from "../assets/island-overlay.png";
+import islandOverlayTwo from "../assets/island-overlay-2.png";
 import AuditoriumOverlay from "../assets/Auditorium-overlay.png";
 import ControlroomOverlay from "../assets/Control-room-overlay.png";
 import LibraryOverlay from "../assets/Library-overlay.png";
@@ -45,7 +46,55 @@ import sailorBack from "../assets/sailor-back.png";
 import gameLogo from "../assets/how-to/welcome-page-logo.png";
 import spaceBar from "../assets/space-bar.png";
 import freeMap from "../assets/free-map.png";
-import firstVideoFrame from "../assets/library/first-video-frame.jpg";
+import firstVideoFrame from "../assets/library/first-video-frame.png";
+import secondVideoFrame from "../assets/library/second-video-frame.png";
+import thirdVideoFrame from "../assets/library/third-video-frame.png";
+import logoVideoFrame from "../assets/library/logo-frame.jpg";
+import characterDownF from "../assets/characterDownF.png";
+import characterLeftF from "../assets/characterLeftF.png";
+import characterRightF from "../assets/characterRightF.png";
+import characterUpF from "../assets/characterUpF.png";
+import characterDownM from "../assets/characterDownM.png";
+import characterLeftM from "../assets/characterLeftM.png";
+import characterRightM from "../assets/characterRightM.png";
+import characterUpM from "../assets/characterUpM.png";
+import coolStuffBanner from "../assets/cool-stuff-banner.png";
+import NPCOneOne from "../assets/NPC-1-01.png";
+import NPCOneTwo from "../assets/NPC-1-02.png";
+import NPCOneThree from "../assets/NPC-1-03.png";
+import NPCOneFour from "../assets/NPC-1-04.png";
+import NPCTwoOne from "../assets/NPC-2-01.png";
+import NPCTwoTwo from "../assets/NPC-2-02.png";
+import NPCTwoThree from "../assets/NPC-2-03.png";
+import NPCTwoFour from "../assets/NPC-2-04.png";
+import NPCThreeOne from "../assets/NPC-3-01.png";
+import NPCThreeTwo from "../assets/NPC-3-02.png";
+import NPCThreeThree from "../assets/NPC-3-03.png";
+import NPCThreeFour from "../assets/NPC-3-04.png";
+import NPCFourOne from "../assets/NPC-4-01.png";
+import NPCFourTwo from "../assets/NPC-4-02.png";
+import NPCFourThree from "../assets/NPC-4-03.png";
+import NPCFourFour from "../assets/NPC-4-04.png";
+import NPCFiveOne from "../assets/NPC-5-01.png";
+import NPCFiveTwo from "../assets/NPC-5-02.png";
+import NPCFiveThree from "../assets/NPC-5-03.png";
+import NPCFiveFour from "../assets/NPC-5-04.png";
+import SCCOneOne from "../assets/SCC-1-01.png";
+import SCCOneTwo from "../assets/SCC-1-02.png";
+import SCCOneThree from "../assets/SCC-1-03.png";
+import SCCOneFour from "../assets/SCC-1-04.png";
+import SCCTwoOne from "../assets/SCC-2-01.png";
+import SCCTwoTwo from "../assets/SCC-2-02.png";
+import SCCTwoThree from "../assets/SCC-2-03.png";
+import SCCTwoFour from "../assets/SCC-2-04.png";
+import SCCThreeOne from "../assets/SCC-3-01.png";
+import SCCThreeTwo from "../assets/SCC-3-02.png";
+import SCCThreeThree from "../assets/SCC-3-03.png";
+import SCCThreeFour from "../assets/SCC-3-04.png";
+import SCCFourOne from "../assets/SCC-4-01.png";
+import SCCFourTwo from "../assets/SCC-4-02.png";
+import SCCFourThree from "../assets/SCC-4-03.png";
+import SCCFourFour from "../assets/SCC-4-04.png";
 
 //SPRITES
 
@@ -97,6 +146,9 @@ controlRoomMiniImage.src = controlRoomMini;
 
 export const islandOverlayImage = new Image();
 islandOverlayImage.src = islandOverlay;
+
+export const islandOverlayImageTwo = new Image();
+islandOverlayImageTwo.src = islandOverlayTwo;
 
 export const auditoriumOverlayImage = new Image();
 auditoriumOverlayImage.src = AuditoriumOverlay;
@@ -198,3 +250,147 @@ freeMapImage.src = freeMap;
 
 export const firstVideoFrameImage = new Image();
 firstVideoFrameImage.src = firstVideoFrame;
+
+export const secondVideoFrameImage = new Image();
+secondVideoFrameImage.src = secondVideoFrame;
+
+export const thirdVideoFrameImage = new Image();
+thirdVideoFrameImage.src = thirdVideoFrame;
+
+export const logoVideoFrameImage = new Image();
+logoVideoFrameImage.src = logoVideoFrame;
+
+export const characterDownFImage = new Image();
+characterDownFImage.src = characterDownF;
+
+export const characterLeftFImage = new Image();
+characterLeftFImage.src = characterLeftF;
+
+export const characterRightFImage = new Image();
+characterRightFImage.src = characterRightF;
+
+export const characterUpFImage = new Image();
+characterUpFImage.src = characterUpF;
+
+export const characterDownMImage = new Image();
+characterDownMImage.src = characterDownM;
+
+export const characterLeftMImage = new Image();
+characterLeftMImage.src = characterLeftM;
+
+export const characterRightMImage = new Image();
+characterRightMImage.src = characterRightM;
+
+export const characterUpMImage = new Image();
+characterUpMImage.src = characterUpM;
+
+export const coolStuffBannerImage = new Image();
+coolStuffBannerImage.src = coolStuffBanner;
+
+export const NPCOneOneImage = new Image();
+NPCOneOneImage.src = NPCOneOne;
+
+export const NPCOneTwoImage = new Image();
+NPCOneTwoImage.src = NPCOneTwo;
+
+export const NPCOneThreeImage = new Image();
+NPCOneThreeImage.src = NPCOneThree;
+
+export const NPCOneFourImage = new Image();
+NPCOneFourImage.src = NPCOneFour;
+
+export const NPCTwoOneImage = new Image();
+NPCTwoOneImage.src = NPCTwoOne;
+
+export const NPCTwoTwoImage = new Image();
+NPCTwoTwoImage.src = NPCTwoTwo;
+
+export const NPCTwoThreeImage = new Image();
+NPCTwoThreeImage.src = NPCTwoThree;
+
+export const NPCTwoFourImage = new Image();
+NPCTwoFourImage.src = NPCTwoFour;
+
+export const NPCThreeOneImage = new Image();
+NPCThreeOneImage.src = NPCThreeOne;
+
+export const NPCThreeTwoImage = new Image();
+NPCThreeTwoImage.src = NPCThreeTwo;
+
+export const NPCThreeThreeImage = new Image();
+NPCThreeThreeImage.src = NPCThreeThree;
+
+export const NPCThreeFourImage = new Image();
+NPCThreeFourImage.src = NPCThreeFour;
+
+export const NPCFourOneImage = new Image();
+NPCFourOneImage.src = NPCFourOne;
+
+export const NPCFourTwoImage = new Image();
+NPCFourTwoImage.src = NPCFourTwo;
+
+export const NPCFourThreeImage = new Image();
+NPCFourThreeImage.src = NPCFourThree;
+
+export const NPCFourFourImage = new Image();
+NPCFourFourImage.src = NPCFourFour;
+
+export const NPCFiveOneImage = new Image();
+NPCFiveOneImage.src = NPCFiveOne;
+
+export const NPCFiveTwoImage = new Image();
+NPCFiveTwoImage.src = NPCFiveTwo;
+
+export const NPCFiveThreeImage = new Image();
+NPCFiveThreeImage.src = NPCFiveThree;
+
+export const NPCFiveFourImage = new Image();
+NPCFiveFourImage.src = NPCFiveFour;
+
+export const SCCOneOneImage = new Image();
+SCCOneOneImage.src = SCCOneOne;
+
+export const SCCOneTwoImage = new Image();
+SCCOneTwoImage.src = SCCOneTwo;
+
+export const SCCOneThreeImage = new Image();
+SCCOneThreeImage.src = SCCOneThree;
+
+export const SCCOneFourImage = new Image();
+SCCOneFourImage.src = SCCOneFour;
+
+export const SCCTwoOneImage = new Image();
+SCCTwoOneImage.src = SCCTwoOne;
+
+export const SCCTwoTwoImage = new Image();
+SCCTwoTwoImage.src = SCCTwoTwo;
+
+export const SCCTwoThreeImage = new Image();
+SCCTwoThreeImage.src = SCCTwoThree;
+
+export const SCCTwoFourImage = new Image();
+SCCTwoFourImage.src = SCCTwoFour;
+
+export const SCCThreeOneImage = new Image();
+SCCThreeOneImage.src = SCCThreeOne;
+
+export const SCCThreeTwoImage = new Image();
+SCCThreeTwoImage.src = SCCThreeTwo;
+
+export const SCCThreeThreeImage = new Image();
+SCCThreeThreeImage.src = SCCThreeThree;
+
+export const SCCThreeFourImage = new Image();
+SCCThreeFourImage.src = SCCThreeFour;
+
+export const SCCFourOneImage = new Image();
+SCCFourOneImage.src = SCCFourOne;
+
+export const SCCFourTwoImage = new Image();
+SCCFourTwoImage.src = SCCFourTwo;
+
+export const SCCFourThreeImage = new Image();
+SCCFourThreeImage.src = SCCFourThree;
+
+export const SCCFourFourImage = new Image();
+SCCFourFourImage.src = SCCFourFour;

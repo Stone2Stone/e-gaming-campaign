@@ -6,7 +6,7 @@ const pdf = new PDF({
     y: 100,
   },
   frames: {
-    max: 5,
+    max: 6,
   },
 });
 

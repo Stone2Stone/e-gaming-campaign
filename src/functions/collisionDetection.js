@@ -8,7 +8,6 @@ export function collisionDetection({ collision1, collision2 }) {
 }
 
 export function popUpCollisionDetection({ collision1, collision2 }) {
-  // console.log(collision2.position);
   return (
     collision2.position.y + collision2.height >= collision1.position.y &&
     collision1.position.y + collision1.height <=

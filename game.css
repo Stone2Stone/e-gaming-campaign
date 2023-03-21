@@ -62,9 +62,69 @@ form {
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.congrats-form-popup {
+  transform: translate(-50%, -50%);
+}
+
+.popup-img {
+  transform: translate(-50%, -50%);
+}
+
+.free-map-script {
+  width: 496px;
+  height: 800px;
+  overflow: scroll;
+  transform: translate(48%, -59.42%);
+  scale: 80%;
+}
+.enterprise-script,
+.open-shift-script,
+.ansible-automation-platform-script {
+  width: 496px;
+  height: 800px;
+  overflow: scroll;
+  transform: translate(111.24%, -0%);
+  scale: 80%;
+}
+
+.link-popup {
   transform: translate(-50%, -50%);
 }
 
 .hide {
   display: none !important;
+}
+
+.cool-stuff-go-to-btn {
+  position: absolute;
+  left: 59%;
+  transform: translate(-50%, -50%);
+  top: 78%;
+  cursor: pointer;
+}
+
+.partner-portal-go-to-btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 80%;
+  cursor: pointer;
+}
+
+.pdf-popup > a {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 78%;
+  cursor: pointer;
+}
+
+.open-link-popup > a {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 78%;
+  cursor: pointer;
 }

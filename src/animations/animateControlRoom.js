@@ -18,7 +18,11 @@ import { controlRoomPopUpCollisions } from "../collisions/PopUpCollisions";
 import { controlRoomMiniMap, gameLogo } from "../mini-maps";
 import player from "../player";
 import checkPlayerLocation from "../functions/checkPlayerLocation";
-import { canvasContext } from "../dom-elements";
+import {
+  ansibleAutomationPlatformScript,
+  canvasContext,
+  congratsFormPopUpImage,
+} from "../dom-elements";
 import Boundary from "../classes/Boundary";
 import keys from "../keys";
 import coinCount from "../coinCount";
@@ -105,6 +109,19 @@ function animateControlRoom() {
         break;
       case 7:
         controlRoomMsg.draw();
+        if (!keys.congratsForm.active) break;
+        keys.congratsForm.active = false;
+        activateCongratsForm();
+        congratsFormPopUpImage.classList.contains("hide") &&
+          congratsFormPopUpImage.classList.remove("hide");
+
+        !ansibleAutomationPlatformScript.classList.contains("hide") &&
+          ansibleAutomationPlatformScript.classList.add("hide");
+        break;
+    }
+    if (!ansibleAutomationPlatformScript.classList.contains("hide")) {
+      canvasContext.fillStyle = "white";
+      canvasContext.fillRect(880, 0, 400, 720);
     }
   } else {
     checkPlayerLocation(player.location);

@@ -18,6 +18,10 @@ a {
   cursor: pointer;
 }
 
+.innovation-island-img {
+  width: 50%;
+}
+
 img.warning-img {
   display: none;
 }

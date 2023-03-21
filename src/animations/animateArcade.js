@@ -21,6 +21,11 @@ import Boundary from "../classes/Boundary";
 import keys from "../keys";
 import coinCount from "../coinCount";
 import { activateCongratsForm } from "../functions/activateForm";
+import {
+  canvasContext,
+  congratsFormPopUpImage,
+  openShiftScript,
+} from "../dom-elements";
 
 function animateArcade() {
   if (!keys.game.paused) return;
@@ -94,7 +99,19 @@ function animateArcade() {
         break;
       case 6:
         arcadeMsgBg.draw();
+        if (!keys.congratsForm.active) break;
+        keys.congratsForm.active = false;
+        activateCongratsForm();
+        congratsFormPopUpImage.classList.contains("hide") &&
+          congratsFormPopUpImage.classList.remove("hide");
+
+        !openShiftScript.classList.contains("hide") &&
+          openShiftScript.classList.add("hide");
         break;
+    }
+    if (!openShiftScript.classList.contains("hide")) {
+      canvasContext.fillStyle = "white";
+      canvasContext.fillRect(880, 0, 400, 720);
     }
   } else {
     checkPlayerLocation(player.location);

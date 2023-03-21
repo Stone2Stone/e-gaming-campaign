@@ -34,6 +34,7 @@ import {
   libraryMsgImage,
   spaceBarImage,
   freeMapImage,
+  islandOverlayImageTwo,
 } from "./images";
 import offset from "./offset";
 
@@ -51,6 +52,14 @@ export const islandOverlay = new Sprite({
     y: -3800,
   },
   image: islandOverlayImage,
+});
+
+export const islandOverlayTwo = new Sprite({
+  position: {
+    x: -2225,
+    y: -3800,
+  },
+  image: islandOverlayImageTwo,
 });
 
 export const auditoriumBg = new Sprite({
@@ -88,7 +97,7 @@ export const libraryOverlay = new Sprite({
 export const arcadeBg = new Sprite({
   position: {
     x: -1350,
-    y: -1200,
+    y: -1155,
   },
   image: arcadeImage,
 });
@@ -96,7 +105,7 @@ export const arcadeBg = new Sprite({
 export const arcadeOverlay = new Sprite({
   position: {
     x: -1350,
-    y: -1200,
+    y: -1155,
   },
   image: arcadeOverlayImage,
 });
@@ -104,7 +113,7 @@ export const arcadeOverlay = new Sprite({
 export const controlRoomBg = new Sprite({
   position: {
     x: -1730,
-    y: -2545,
+    y: -2485,
   },
   image: controlRoomImage,
 });
@@ -112,7 +121,7 @@ export const controlRoomBg = new Sprite({
 export const controlRoomOverlay = new Sprite({
   position: {
     x: -1730,
-    y: -2545,
+    y: -2485,
   },
   image: controlRoomOverlayImage,
 });

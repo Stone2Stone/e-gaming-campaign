@@ -25,6 +25,13 @@ const ansibleAutomationPlatformScript = congratsFormPopUpEl.querySelector(
 );
 const openShiftScript = congratsFormPopUpEl.querySelector(".open-shift-script");
 
+const coolStuffBannerEl = document.querySelector(".cool-stuff-banner");
+const partnerPortalBannerEl = document.querySelector(".partner-portal-banner");
+const PDFBannerEl = document.querySelector(".pdf-popup");
+const PDFLink = PDFBannerEl.querySelector(".pdf-popup-link");
+const openLinkBannerEl = document.querySelector(".open-link-popup");
+const openLink = openLinkBannerEl.querySelector(".link-popup-link");
+
 const videoOne = document.getElementById("video1");
 const videoTwo = document.getElementById("video2");
 const videoThree = document.getElementById("video3");
@@ -44,6 +51,12 @@ export {
   enterPriseScript,
   ansibleAutomationPlatformScript,
   openShiftScript,
+  coolStuffBannerEl,
+  partnerPortalBannerEl,
+  PDFBannerEl,
+  PDFLink,
+  openLinkBannerEl,
+  openLink,
   videoOne,
   videoTwo,
   videoThree,

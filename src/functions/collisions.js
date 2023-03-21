@@ -95,3 +95,32 @@ export const getPopUpCollisionMap = (
 
   return popUp;
 };
+
+export const getPDFLinkCollisionMap = (
+  collisionData,
+  collisionWidth,
+  currentMap,
+  symbols
+) => {
+  const popUp = [];
+  const collisionsMap = collisionData.parse2D(collisionWidth);
+  collisionsMap.forEach((row, rowIndex) => {
+    row.forEach((currentSymbol, symbolIndex) => {
+      symbols.forEach((symbol) => {
+        if (currentSymbol === symbol) {
+          popUp.push(
+            new Boundary({
+              position: {
+                x: symbolIndex * Boundary.width + currentMap.position.x,
+                y: rowIndex * Boundary.height + currentMap.position.y,
+              },
+              symbol: symbol,
+            })
+          );
+        }
+      });
+    });
+  });
+
+  return popUp;
+};

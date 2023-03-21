@@ -12,33 +12,35 @@
       <canvas id="app"> </canvas>
       <video
         src="assets/video/video_1.mp4"
-        preload="none"
+        preload="metadata"
         paused
         hidden
         loop
         id="video1"
       ></video>
-      <!-- <video
-        src="https://player.vimeo.com/video/762665301?h=4aeb155171&dnt=1&app_id=122963"
-        preload="auto"
-        autoplay="autoplay"
+      <video
+        src="assets/video/video_2.mp4"
+        preload="metadata"
+        paused
         hidden
+        loop
         id="video2"
       ></video>
       <video
-        src="https://player.vimeo.com/video/762665301?h=4aeb155171&dnt=1&app_id=122963"
-        preload="auto"
-        autoplay="autoplay"
+        src="assets/video/video_3.mp4"
+        preload="metadata"
+        paused
         hidden
+        loop
         id="video3"
-      ></video> -->
+      ></video>
       <div
         class="form-popup free-map-form-popup hide"
         width="1280"
         height="720"
       >
         <div class="popup-img">
-          <img src="/assets/free-map-board.png" />
+          <img src="/assets/free-map.png" />
           <img
             src="/assets//form-btn.png"
             alt="form-btn"
@@ -74,7 +76,44 @@
           <script src="//r1.dotdigital-pages.com/resources/sharing/embed.js?sharing=lp-embed&domain=r1.dotdigital-pages.com&id=7FTD-29J%2Fred-hat-openshift%22"></script>
         </div>
       </div>
+      <div class="form-popup link-popup">
+        <div class="cool-stuff-banner hide">
+          <img src="/assets/cool-stuff-banner.png" alt="Cool stuff banner" />
+          <a
+            href="https://coolstuff.redhat.com/login"
+            class="cool-stuff-go-to-btn"
+            target="_blank"
+          >
+            <img src="/assets/go-to-link.png" alt="Go To Button" />
+          </a>
+        </div>
+        <div class="partner-portal-banner hide">
+          <img
+            src="/assets/partner-portal-sign.png"
+            alt="Partner Portal Banner"
+          />
+          <a
+            href="https://www.scc.com/partners/redhat/"
+            target="_blank"
+            class="partner-portal-go-to-btn"
+          >
+            <img src="/assets/go-to-link.png" alt="Go To Button" />
+          </a>
+        </div>
+        <div class="pdf-popup hide">
+          <img src="/assets/pdf-popup.png" alt="PDF PopUp" class="pdf-popup" />
+          <a href="" class="pdf-popup-link" target="_blank">
+            <img src="/assets/open-pdf.png" alt="Open PDF" class="open-pdf" />
+          </a>
+        </div>
+        <div class="open-link-popup hide">
+          <img src="/assets/link-popup.png" alt="Link Pop Up" />
+          <a href="#" class="link-popup-link" target="_blank">
+            <img src="/assets/open-link.png" alt="Open Link Image" />
+          </a>
+        </div>
+      </div>
     </div>
-    <script defer type="module" src="/src/main.js"></script>
+    <script rel="preload" defer type="module" src="/src/main.js"></script>
   </body>
 </html>

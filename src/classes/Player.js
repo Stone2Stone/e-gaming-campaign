@@ -14,7 +14,7 @@ class Player extends Sprite {
     collisionBlocks = [],
     buildingBoundaries = [],
     oceanCollisions = [],
-    location = "arcade",
+    location = "island",
     moveItems,
   }) {
     super({ position, image, frames, moving, sprites });
@@ -117,7 +117,6 @@ class Player extends Sprite {
           collision2: buildingBoundary,
         })
       ) {
-        console.log(buildingBoundary.symbol);
         switch (buildingBoundary.symbol) {
           case 66884:
             this.location = "auditorium";
@@ -183,13 +182,25 @@ class Player extends Sprite {
   }
 
   verticalCollision(moveNumber) {
-    this.moving &&
-      this.moveItems.forEach((moveItem) => (moveItem.position.x += moveNumber));
+    if (!this.moving) return;
+    this.moveItems.forEach((moveItem) => {
+      moveItem.position.x += moveNumber;
+      if (!moveItem.endPosition) return;
+      moveItem.endPosition.x += moveNumber;
+      if (!moveItem.startPosition) return;
+      moveItem.startPosition.x += moveNumber;
+    });
   }
 
   horizontalCollision(moveNumber) {
-    this.moving &&
-      this.moveItems.forEach((moveItem) => (moveItem.position.y += moveNumber));
+    if (!this.moving) return;
+    this.moveItems.forEach((moveItem) => {
+      moveItem.position.y += moveNumber;
+      if (!moveItem.endPosition) return;
+      moveItem.endPosition.y += moveNumber;
+      if (!moveItem.startPosition) return;
+      moveItem.startPosition.y += moveNumber;
+    });
   }
 }
 

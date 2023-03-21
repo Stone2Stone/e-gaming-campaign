@@ -5,13 +5,20 @@ import {
   islandBg,
   libraryBg,
 } from "../backgrounds";
-import { getPopUpCollisionMap } from "../functions/collisions";
+import {
+  getPDFLinkCollisionMap,
+  getPopUpCollisionMap,
+} from "../functions/collisions";
 import {
   arcadePopUp,
   auditoriumPopUp,
   controlRoomPopUp,
+  coolStuffPopUp,
   freeMapPopUp,
   libraryPopUp,
+  openLinkPopUp,
+  PartnerPortalPopUp,
+  pdfPopUp,
 } from "./popUpsData";
 
 export const auditoriumPopUpCollisions = getPopUpCollisionMap(
@@ -47,4 +54,32 @@ export const freeMapPopUpCollisions = getPopUpCollisionMap(
   160,
   islandBg,
   66987
+);
+
+export const coolStuffPopUpCollisions = getPopUpCollisionMap(
+  coolStuffPopUp,
+  160,
+  islandBg,
+  66988
+);
+
+export const partnerPortalPopUpCollisions = getPDFLinkCollisionMap(
+  PartnerPortalPopUp,
+  49,
+  libraryBg,
+  [45711, 45712, 45713, 45714, 45721, 45722, 45723, 45724, 45727]
+);
+
+export const pdfPopUpCollisions = getPDFLinkCollisionMap(
+  pdfPopUp,
+  49,
+  libraryBg,
+  [45725]
+);
+
+export const linkPopUpCollisions = getPopUpCollisionMap(
+  openLinkPopUp,
+  49,
+  libraryBg,
+  45723
 );
