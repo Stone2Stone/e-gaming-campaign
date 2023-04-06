@@ -1,7 +1,6 @@
 const canvas = document.querySelector("canvas");
 const canvasContext = canvas.getContext("2d");
-canvas.width = 1280;
-canvas.height = 720;
+// const worker = new Worker("/src/worker.js");
 
 const freeFormPopUpEl = document.querySelector(".free-map-form-popup");
 const freeFormPopUpImages = freeFormPopUpEl.querySelector(".popup-img");
@@ -36,9 +35,16 @@ const videoOne = document.getElementById("video1");
 const videoTwo = document.getElementById("video2");
 const videoThree = document.getElementById("video3");
 
+const buttonLeft = document.getElementById("button-left");
+const buttonRight = document.getElementById("button-right");
+const buttonUp = document.getElementById("button-up");
+const buttonDown = document.getElementById("button-down");
+const buttonSpace = document.getElementById("button-space");
+
 export {
   canvas,
   canvasContext,
+  // worker,
   freeFormPopUpEl,
   freeFormPopUpImages,
   freeMapScriptEl,
@@ -60,6 +66,11 @@ export {
   videoOne,
   videoTwo,
   videoThree,
+  buttonLeft,
+  buttonRight,
+  buttonUp,
+  buttonDown,
+  buttonSpace,
 };
 
 /**

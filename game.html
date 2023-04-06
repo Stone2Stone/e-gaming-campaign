@@ -9,7 +9,13 @@
   </head>
   <body>
     <div class="canvas-wrapper" width="1280" height="720">
-      <canvas id="app"> </canvas>
+      <!-- <img
+        src="/assets/how-to/welcome-page-logo.png"
+        id="mobile-logo"
+        alt="Logo"
+      /> -->
+      <canvas id="app" width="1280" height="720"> </canvas>
+      <div style="position: relative" width="1280" height="720"></div>
       <video
         src="assets/video/video_1.mp4"
         preload="metadata"
@@ -112,6 +118,13 @@
             <img src="/assets/open-link.png" alt="Open Link Image" />
           </a>
         </div>
+      </div>
+      <div class="buttons">
+        <div id="button-left"></div>
+        <div id="button-right"></div>
+        <div id="button-up"></div>
+        <div id="button-down"></div>
+        <div id="button-space"></div>
       </div>
     </div>
     <script rel="preload" defer type="module" src="/src/main.js"></script>

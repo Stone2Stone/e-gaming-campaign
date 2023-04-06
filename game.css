@@ -19,7 +19,17 @@ body {
 }
 
 .canvas-wrapper {
+  display: flex;
+  flex-direction: column;
   position: relative;
+}
+
+#mobile-logo {
+  display: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+  margin-bottom: 50px;
 }
 
 canvas {
@@ -127,4 +137,70 @@ form {
   transform: translate(-50%, -50%);
   top: 78%;
   cursor: pointer;
+}
+
+.buttons {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". up	 ."
+    "left space right"
+    ". down .";
+  justify-items: center;
+}
+
+#button-left {
+  grid-area: left;
+  background-image: url(assets/button-left.png);
+}
+
+#button-right {
+  grid-area: right;
+  background-image: url(assets/button-right.png);
+}
+
+#button-up {
+  grid-area: up;
+  background-image: url(assets/button-up.png);
+}
+
+#button-down {
+  grid-area: down;
+  background-image: url(assets/button-down.png);
+}
+
+#button-space {
+  grid-area: space;
+  background-image: url(/assets/mobile-space.png);
+}
+
+.buttons {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+}
+
+.buttons > div {
+  width: 100%;
+  height: 400px;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 800px) {
+  .canvas-wrapper {
+    scale: 0.3;
+  }
+
+  #mobile-logo {
+    display: flex;
+  }
+
+  .buttons {
+    display: grid;
+  }
 }

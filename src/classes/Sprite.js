@@ -77,7 +77,4 @@ class Sprite {
   }
 }
 
-// canvas.width / 2 - this.image.width / 4 / 2,
-// canvas.height / 2 - this.image.height / 2,
-
 export default Sprite;

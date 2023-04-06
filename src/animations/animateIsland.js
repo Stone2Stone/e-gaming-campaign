@@ -31,18 +31,6 @@ function animateIsland() {
   if (player.location === "island") {
     requestAnimationFrame(animateIsland);
     islandBg.draw();
-    islandBoundaries.forEach((islandBoundary) => {
-      islandBoundary.draw("transparent");
-    });
-    exitIslandBoundaries.forEach((islandBuildingBoundary) => {
-      islandBuildingBoundary.draw("transparent");
-    });
-    freeMapPopUpCollisions.forEach((freeMapPopUpCollision) => {
-      freeMapPopUpCollision.draw("transparent");
-    });
-    coolStuffPopUpCollisions.forEach((coolStuffPopUpCollision) => {
-      coolStuffPopUpCollision.draw("transparent");
-    });
     islandSpawnCollisions.draw("transparent");
     player.collisionBlocks = islandBoundaries;
     player.buildingBoundaries = exitIslandBoundaries;

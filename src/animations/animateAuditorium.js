@@ -18,7 +18,6 @@ import { auditoriumPopUpCollisions } from "../collisions/PopUpCollisions";
 import { auditoriumMiniMap, gameLogo } from "../mini-maps";
 import player from "../player";
 import checkPlayerLocation from "../functions/checkPlayerLocation";
-import { auditoriumSpawnCollision } from "../collisions/spawnCollision";
 import keys from "../keys";
 import Boundary from "../classes/Boundary";
 import coinCount from "../coinCount";

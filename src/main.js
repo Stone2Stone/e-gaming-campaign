@@ -14,6 +14,11 @@ import {
   ansibleAutomationPlatformScript,
   enterPriseScript,
   openShiftScript,
+  buttonUp,
+  buttonLeft,
+  buttonRight,
+  buttonDown,
+  buttonSpace,
 } from "./dom-elements";
 
 setTimeout(() => {
@@ -68,6 +73,101 @@ setTimeout(() => {
         keys.ArrowRight.pressed = false;
         break;
     }
+  });
+
+  addEventListener("touchstart", (e) => {
+    console.log(e.currentTarget);
+    switch (e.target) {
+      case buttonLeft:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowLeft.pressed = true;
+        break;
+      case buttonRight:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowRight.pressed = true;
+        break;
+      case buttonUp:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowUp.pressed = true;
+        break;
+      case buttonDown:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowDown.pressed = true;
+        break;
+      case buttonSpace:
+        if (keys.game.paused) {
+          player.moving = false;
+          return;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        keys.game.paused = true;
+        checkPlayerLocation(player.location);
+        !congratsFormPopUpEl.classList.contains("hide") &&
+          congratsFormPopUpEl.classList.add("hide");
+        break;
+    }
+  });
+
+  addEventListener("touchmove", (e) => {
+    switch (e.target) {
+      case buttonLeft:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowLeft.pressed = true;
+        break;
+      case buttonRight:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowRight.pressed = true;
+        break;
+      case buttonUp:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowUp.pressed = true;
+        break;
+      case buttonDown:
+        e.preventDefault();
+        e.stopPropagation();
+        keys.ArrowDown.pressed = true;
+        break;
+      case buttonSpace:
+        if (keys.game.paused) {
+          player.moving = false;
+          return;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        keys.game.paused = true;
+        checkPlayerLocation(player.location);
+        !congratsFormPopUpEl.classList.contains("hide") &&
+          congratsFormPopUpEl.classList.add("hide");
+        break;
+    }
+  });
+
+  buttonLeft.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    keys.ArrowLeft.pressed = false;
+  });
+
+  buttonRight.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    keys.ArrowRight.pressed = false;
+  });
+
+  buttonUp.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    keys.ArrowUp.pressed = false;
+  });
+
+  buttonDown.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    keys.ArrowDown.pressed = false;
   });
 }, 100);
 
