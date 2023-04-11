@@ -67,7 +67,10 @@ export const partnerPortalPopUpCollisions = getPDFLinkCollisionMap(
   PartnerPortalPopUp,
   49,
   libraryBg,
-  [45711, 45712, 45713, 45714, 45721, 45722, 45723, 45724, 45727]
+  [
+    45711, 45712, 45713, 45714, 45715, 45716, 45717, 45721, 45722, 45723, 45724,
+    45727,
+  ]
 );
 
 export const pdfPopUpCollisions = getPDFLinkCollisionMap(

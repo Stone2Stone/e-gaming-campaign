@@ -22,7 +22,7 @@ const player = new Player({
     down: playerDownImage,
     right: playerRightImage,
   },
-  location: "island",
+  location: "library",
   speed: 7,
 });
 

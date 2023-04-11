@@ -76,6 +76,28 @@ const thirdVideo = new Video({
 
 const pdfOne = new PDF({
   position: {
+    x: 831,
+    y: -575,
+  },
+  frames: {
+    max: 6,
+  },
+  image: pdfImage,
+});
+
+const pdfTwo = new PDF({
+  position: {
+    x: 1855,
+    y: -575,
+  },
+  frames: {
+    max: 6,
+  },
+  image: pdfImage,
+});
+
+const pdfThree = new PDF({
+  position: {
     x: 447,
     y: -175,
   },
@@ -85,7 +107,7 @@ const pdfOne = new PDF({
   image: pdfImage,
 });
 
-const pdfTwo = new PDF({
+const pdfFour = new PDF({
   position: {
     x: 831,
     y: -175,
@@ -96,7 +118,18 @@ const pdfTwo = new PDF({
   image: pdfImage,
 });
 
-const pdfThree = new PDF({
+const pdfFive = new PDF({
+  position: {
+    x: 1340,
+    y: -175,
+  },
+  frames: {
+    max: 6,
+  },
+  image: pdfImage,
+});
+
+const pdfSix = new PDF({
   position: {
     x: 1855,
     y: -175,
@@ -107,7 +140,7 @@ const pdfThree = new PDF({
   image: pdfImage,
 });
 
-const pdfFour = new PDF({
+const pdfSeven = new PDF({
   position: {
     x: 2239,
     y: -175,
@@ -170,6 +203,11 @@ const pdfLinkThree =
   "https://stone2stone.s3.eu-west-2.amazonaws.com/%24RG1J6FP.pdf";
 const pdfLinkFour =
   "https://stone2stone.s3.eu-west-2.amazonaws.com/%24RG4IM5V.pdf";
+const pdfLinkFive =
+  "https://stone2stone.s3.eu-west-2.amazonaws.com/service-now.pdf";
+const pdfLinkSix = "https://stone2stone.s3.eu-west-2.amazonaws.com/ilmt.pdf";
+const pdfLinkSeven =
+  "https://stone2stone.s3.eu-west-2.amazonaws.com/network-automation.pdf";
 
 const openLinkOne = "https://www.ansible.com/";
 const openLinkTwo =
@@ -220,6 +258,9 @@ function animateLibrary() {
     pdfTwo.update();
     pdfThree.update();
     pdfFour.update();
+    pdfFive.update();
+    pdfSix.update();
+    pdfSeven.update();
     onlineOne.update();
     onlineTwo.update();
     onlineThree.update();
@@ -245,6 +286,9 @@ function animateLibrary() {
       pdfTwo,
       pdfThree,
       pdfFour,
+      pdfFive,
+      pdfSix,
+      pdfSeven,
       onlineOne,
       onlineTwo,
       onlineThree,
@@ -294,6 +338,21 @@ function animateLibrary() {
       case 45714:
         keys.pdfPopUp.active = true;
         if (PDFLink.href != pdfLinkFour) PDFLink.href = pdfLinkFour;
+        activatePDFLink();
+        break;
+      case 45715:
+        keys.pdfPopUp.active = true;
+        if (PDFLink.href != pdfLinkFive) PDFLink.href = pdfLinkFive;
+        activatePDFLink();
+        break;
+      case 45716:
+        keys.pdfPopUp.active = true;
+        if (PDFLink.href != pdfLinkSix) PDFLink.href = pdfLinkSix;
+        activatePDFLink();
+        break;
+      case 45717:
+        keys.pdfPopUp.active = true;
+        if (PDFLink.href != pdfLinkSeven) PDFLink.href = pdfLinkSeven;
         activatePDFLink();
         break;
       case 45721:
