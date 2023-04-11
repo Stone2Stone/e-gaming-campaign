@@ -36,6 +36,7 @@ main {
   margin-inline: auto;
   display: flex;
   gap: 0 10px;
+  height: -moz-fit-content;
   height: fit-content;
   position: relative;
 }
@@ -138,4 +139,28 @@ form > button[type="submit"] {
 .section {
   background-color: #29abe2;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: unset;
+  }
+
+  body .images {
+    justify-content: center;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  main {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column;
+  }
+
+  .first-section {
+    gap: 10px 0;
+  }
 }
