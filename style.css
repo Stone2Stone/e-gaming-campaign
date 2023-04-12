@@ -16,32 +16,18 @@ a {
   color: unset;
   text-decoration: none;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .innovation-island-img {
   width: 50%;
 }
 
-img.warning-img {
-  display: none;
-}
-
-.text {
-  display: none;
-  margin: 0 10px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.text strong {
-  font-size: 20px;
-}
-
-.text p {
-  font-size: 16px;
-}
-
 @media screen and (max-width: 800px) {
+  a {
+    margin-left: unset;
+  }
+
   body {
     row-gap: 20px;
   }
@@ -52,14 +38,5 @@ img.warning-img {
 
   .text {
     display: block;
-  }
-
-  img.warning-img {
-    display: block;
-    width: 20%;
-  }
-
-  a {
-    display: none;
   }
 }
